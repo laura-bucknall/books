@@ -105,6 +105,15 @@ h2{
     position: absolute;
 }
 
+#map-container.offline-map {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-image: url('images/offlinemap.jpg');
+}
+
 @media (min-width: 840px){
 	.box, .background, .map-background{
 		width: 700px;

@@ -27,7 +27,7 @@ var CACHED_URLS = [
     BASE_PATH + 'images/bookshelf.jpg',
     BASE_PATH + 'images/bookshelf-m.jpg',
     BASE_PATH + 'images/bookshelf-t.jpg',
-    BASE_PATH + 'offlinemap.jpg',
+    BASE_PATH + 'images/offlinemap.jpg',
     BASE_PATH + 'images/ms-icon-310x310.png',
     // JavaScript
     BASE_PATH + 'material.js',
