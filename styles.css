@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background: rgba(115, 66, 26, 0.58);
+	margin: 0;
+}
+header{
+	margin: 0 auto;
+	display: table;
+	background: #372E29;
+	width: 700px;
+	color: white;
+	font-family: sans-serif;
+	font-weight: 100;
+    text-align: center;
+}
+header p{
+	margin: 0 auto;
+	padding: 20px;
+	display: inherit;
+	font-size: 20px;
+}
+
+.box{
+	background: #423934;
+	margin: 0 auto;
+	background-image: url(images/bookshelf.jpg);
+}
+.background{
+	background: rgba(0, 0, 0, 0.73);
+	margin: 0 auto;
+	height: 1000px;
+}
+.box-section{
+	padding: 30px 30px;
+	height: 1000px;
+}
+.books{
+	width: 125px;
+	padding: 16px;
+}
+#book1{
+	margin-top: 0px;
+}
+#book5, #book9{
+	margin-top: 85px;
+}
+
+h2{
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 400;
+	color: #fff;
+	padding-top: 40px;
+}
+.background img{
+	float: left;
+	margin-top: 35px;
+	padding-left: 45px;
+	padding-right: 35px;
+}
+.background p{
+	font-size: 17px;
+	margin-top: 0;
+	line-height: 30px;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: 100;
+	padding-left: 45px;
+	padding-right: 45px;
+	padding-top: 30px;
+}
+.like-button{
+    float: left;
+}
+.nearby-button{
+    float: right;
+    margin-right: 120px;
+}
+.like-button, .nearby-button{
+    padding-left: 90px;
+    padding-top: 30px;
+}
+
+.like-button p, .nearby-button p{
+	border: 1px solid blue;
+	width: 140px;
+	border-radius: 5px;
+	font-size: 24px;
+	text-align: center;
+	padding: 10px;
+}
+
+@media (min-width: 840px){
+	.box, .background{
+		width: 700px;
+	}
+}
+@media (max-width: 840px){
+	header{
+		width: 100%;
+	}
+	.books{
+	    padding: 24px;
+	}
+	#book5{
+	    margin-top: 42px;
+	}
+	#book9{
+	    margin-top: 43px;
+	}
+	.box{
+	background-image: url(images/bookshelf-t.jpg);
+}
+}
+@media (max-width: 670px) and (orientation: landscape) {
+    .books{
+        padding: 11px;
+    }
+    .background{
+        height: auto;
+    }
+    #book5{
+	    margin-top: 78px;
+	}
+	#book9{
+	    margin-top: 70px;
+	}
+	.like-button, .nearby-button{
+	    float: none;
+        margin-left: 0px;
+        padding-bottom: 10px;
+	}
+	.nearby-button{
+	    margin-top: -116px;
+        margin-left: 315px;
+	}
+}
+
+@media (max-width: 400px){
+    .box{
+        background: url(images/bookshelf-m.jpg);
+    }
+    .background{
+        height: auto;
+    }
+	.books{
+		width: 100px;
+		padding-left: 20px;
+		margin-right: -35px;
+	}
+	.box-section{
+		padding: 0;
+	}
+	.background img{
+	    width: 130px;
+	    padding-left: 8px;
+	    padding-right: 10px;
+	}
+	.background p{
+	    padding-left: 7px;
+	    padding-right: 0;
+	}
+	#book5{
+	    margin-top: 17px;
+	}
+	#book9{
+	    margin-top: 17px;
+	}
+	#book10{
+	    margin-top: 17px;
+	}
+	.like-button, .nearby-button{
+	    float: none;
+	    margin-left: -76px;
+	    padding-bottom: 10px;
+	}
+	.nearby-button{
+	    margin-top:  -116px;
+	    margin-left: 115px;
+	}
+}
