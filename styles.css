@@ -164,6 +164,9 @@ h4{
     header img{
         right: 0;
     }
+    .line{
+        width: 115%;
+}
 @media (max-width: 670px) and (orientation: landscape) {
     .books{
         padding: 11px;
