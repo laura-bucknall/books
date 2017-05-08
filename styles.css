@@ -101,7 +101,8 @@ h2{
     position: relative;
     overflow: hidden;
     width: 635px;
-    margin: 40px auto;
+    margin: 75px 30px;
+    position: absolute;
 }
 
 @media (min-width: 840px){
