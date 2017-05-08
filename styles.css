@@ -113,6 +113,10 @@ header img{
 }
 h4{
     font-weight:100;
+    font-size: 18px;
+}
+#place-section{
+    font-size: 15px;
 }
 .line{
     border: 1px solid #fff;
@@ -170,6 +174,9 @@ h4{
     #place-section{
         margin-top: 275px;
 }
+    #map-background{
+        height:820px;
+    }
 
 }
 @media (max-width: 670px) and (orientation: landscape) {
