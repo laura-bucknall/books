@@ -35,7 +35,7 @@ header p{
 .map-background{
     background: rgba(0, 0, 0, 0.73);
 	margin: 0 auto;
-    height:805px;
+    height:830px;
 }
 .box-section{
 	padding: 30px 30px;
@@ -175,7 +175,7 @@ h4{
         margin-top: 275px;
 }
     #map-background{
-        height:820px;
+        height:850px;
     }
 
 }
@@ -252,6 +252,6 @@ h4{
 	    margin-left: 115px;
 	}
     #place-section{
-        margin-top: 275px;
+        margin-top: 265px;
     }
 }
