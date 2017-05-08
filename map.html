@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Top 10 Books of the Week</title>
-    
 <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
@@ -22,29 +22,36 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
 <meta name="theme-color" content="#AD917A">
-    
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 <header>
-<p>Everything but the Truth - Gillian McAllister</p>
+<p>Bookstores Nearby</p>
 </header>
+    
+    <div id="map-container" style="height: 300px;"></div>
+                <script>
+                function initMap() {
+                    var myLocation = {lat: 53.0027, lng: 2.1794};
+                    var map = new google.maps.Map(document.getElementById('map-container'), {
+                    zoom: 2,
+                    center: myLocation
+                    });
+                    var marker = new google.maps.Marker({
+                    position: myLocation,
+                    map: map
+                    });
+                }
+                </script>
+                <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5LF2m0Y_IusdgulkyTl5ISc4pVs-2p1M&callback=initMap">
+                </script>
 
-<div class="background">
-<img src="images/book8.jpg" alt="Everything but the Touch">
-<p>Everything But the Truth is a brilliantly compelling thriller about how much - or how little - we can trust the ones we love. 'Packed with twists and turns that will make it almost impossible to put down!' Hello! 'Twisty and emotionally charged. Breathlessly brilliant' Heat It all started with the email. Rachel didn't even mean to look. She loves Jack and she's pregnant with their child. She trusts him. But now she's seen it, she can't undo that moment. Or the chain of events it has set in motion. Why has Jack been lying about his past? Just what exactly is he hiding? And doesn't Rachel have a right to know the truth at any cost? 'A gripping, compelling page turner that kept me up half the night' Liz Nugent, bestselling author of Lying in Wait 'You won't be able to put it down!' Hollie Overton, bestselling author of Baby Doll 'Perfection. Intriguing and compelling. An exceptional debut' Clare Mackintosh, bestselling author of I See You 'A beautifully written domestic noir full of secrets and lies' Claire Douglas, bestselling author of Local Girl Missing</p>
-
-<div class="like-button">
-	<p>Like</p>
-</div>
-<div class="nearby-button">
-	<p>Nearby</p>
-</div>
-</div>
 
 
-<script type="scripts.js"></script>
+<script>scripts.js</script>
 
 </body>
 </html>
