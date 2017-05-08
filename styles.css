@@ -175,7 +175,7 @@ h4{
         margin-top: 275px;
 }
     #map-background{
-        height:850px;
+        height:880px;
     }
 
 }
@@ -254,4 +254,7 @@ h4{
     #place-section{
         margin-top: 265px;
     }
+    .map-background{
+    height:830px;
+}
 }
