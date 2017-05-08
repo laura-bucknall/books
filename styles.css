@@ -32,6 +32,11 @@ header p{
 	margin: 0 auto;
 	height: 1000px;
 }
+.map-background{
+    background: rgba(0, 0, 0, 0.73);
+	margin: 0 auto;
+    height: 500px;
+}
 .box-section{
 	padding: 30px 30px;
 	height: 1000px;
