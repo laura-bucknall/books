@@ -1,5 +1,5 @@
 var BASE_PATH = '/books/';
-var CACHE_NAME = 'gih-cache-v1';
+var CACHE_NAME = 'gih-cache-v9';
 var TEMP_IMAGE_CACHE_NAME = 'temp-cache-v1';
 
 var CACHED_URLS = [
@@ -37,7 +37,6 @@ var CACHED_URLS = [
     BASE_PATH + 'manifest.json',
   // CSS and fonts
     BASE_PATH + 'styles.css',
-    BASE_PATH + 'scripts.js',
     BASE_PATH + 'book-1.html',
     BASE_PATH + 'book-2.html',
     BASE_PATH + 'book-3.html',
@@ -51,8 +50,6 @@ var CACHED_URLS = [
 
 
 ];
-
-var googleMapsAPIJS = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC5LF2m0Y_IusdgulkyTl5ISc4pVs-2p1M&callback=initMap';
 
 self.addEventListener('install', function(event) {
   // Cache everything in CACHED_URLS. Installation fails if anything fails to cache
@@ -78,100 +75,8 @@ self.addEventListener('fetch', function(event) {
         });
       })
     );
-       } else if (requestURL.pathname === BASE_PATH + 'second.html') {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match('second.html').then(function(cachedResponse) {
-          var fetchPromise = fetch('second.html').then(function(networkResponse) {
-            cache.put('second.html', networkResponse.clone());
-            return networkResponse;
-          });
-          return cachedResponse || fetchPromise;
-        });
-      })
-    );
-           
-           
- // Handle requests for Google Maps JavaScript API file
-  } else if (requestURL.href === googleMapsAPIJS) {
-    event.respondWith(
-      fetch(
-        googleMapsAPIJS+'&'+Date.now(),
-        { mode: 'no-cors', cache: 'no-store' }
-      ).catch(function() {
-        return caches.match('offline-map.js');
-      })
-    );
-      
-     // Handle requests for events JSON file
-  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        }).catch(function() {
-          return caches.match(event.request);
-        });
-      })
-    );
-  } else if (requestURL.href === newsAPIJSON) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          caches.delete(TEMP_IMAGE_CACHE_NAME);
-          return networkResponse;
-        }).catch(function() {
-          return caches.match(event.request);
-        });
-      })
-    );
-  // Handle requests for event images.
-  } else if (requestURL.pathname.includes('/eventsimages/')) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(cacheResponse) {
-          return cacheResponse||fetch(event.request).then(function(networkResponse) {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          }).catch(function() {
-            return cache.match('appimages/event-default.png');
-          });
-        });
-      })
-    );
-  // 
-  } else if (requestURL.href.includes('bbci.co.uk/news/')) {
-    event.respondWith(
-      caches.open(TEMP_IMAGE_CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(cacheResponse) {
-          return cacheResponse||fetch(event.request, {mode: 'no-cors'}).then(function(networkResponse) {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          }).catch(function() {
-            return cache.match('appimages/news-default.jpg');
-          });
-        });
-      })
-    );
-
-      
-      
-  } else if (
-    CACHED_URLS.includes(requestURL.href) ||
-    CACHED_URLS.includes(requestURL.pathname)
-  ) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(response) {
-          return response || fetch(event.request);
-        });
-      })
-    );
-  }
+  };
 });
-
 
 self.addEventListener('activate', function(event) {
   event.waitUntil(
