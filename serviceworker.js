@@ -1,36 +1,41 @@
-var CACHE_NAME = 'gih-cache-v4';
+var BASE_PATH = '/books/';
+var CACHE_NAME = 'gih-cache-v5';
+var TEMP_IMAGE_CACHE_NAME = 'temp-cache-v1';
+
 var CACHED_URLS = [
-  // Our HTML
-  'first.html',
-  // Stylesheets and fonts
-    'styles.css',
-  // JavaScript
-    'material.js',
+    // Our HTML
+    BASE_PATH + 'first.html',
     
-  // Favicon images
-    'images/android-icon-36x36.png',
-    'images/android-icon-48x48.png',
-    'images/android-icon-72x72.png',
-    'images/android-icon-96x96.png',
-    'images/android-icon-144x144.png',
-    'images/android-icon-192x192.png',
-    'images/favicon-32x32.png',
+    // Images for favicons
+    BASE_PATH + 'images/android-icon-36x36.png',
+    BASE_PATH + 'images/android-icon-48x48.png',
+    BASE_PATH + 'images/android-icon-72x72.png',
+    BASE_PATH + 'images/android-icon-96x96.png',
+    BASE_PATH + 'images/android-icon-144x144.png',
+    BASE_PATH + 'images/android-icon-192x192.png',
+    BASE_PATH + 'images/favicon-32x32.png',
 
     //Images for page
-    'images/book1.jpg',
-    'images/book2.jpg',
-    'images/book3.jpg',
-    'images/book4.jpg',
-    'images/book5.ico',
-    'images/book6.jpg',
-    'images/book7.jpg',
-    'images/book8.jpg',
-    'images/book9.jpg',
-    'images/book10.jpg',
-    'images/bookshelf.jpg',
-    'images/bookshelf-m.jpg',
-    'images/bookshelf-t.jpg',
-    'images/ms-icon-310x310.png'
+    BASE_PATH + 'images/book1.jpg',
+    BASE_PATH + 'images/book2.jpg',
+    BASE_PATH + 'images/book3.jpg',
+    BASE_PATH + 'images/book4.jpg',
+    BASE_PATH + 'images/book5.ico',
+    BASE_PATH + 'images/book6.jpg',
+    BASE_PATH + 'images/book7.jpg',
+    BASE_PATH + 'images/book8.jpg',
+    BASE_PATH + 'images/book9.jpg',
+    BASE_PATH + 'images/book10.jpg',
+    BASE_PATH + 'images/bookshelf.jpg',
+    BASE_PATH + 'images/bookshelf-m.jpg',
+    BASE_PATH + 'images/bookshelf-t.jpg',
+    BASE_PATH + 'images/ms-icon-310x310.png',
+    // JavaScript
+    BASE_PATH + 'material.js',
+    // Manifest
+    BASE_PATH + 'manifest.json',
+  // CSS and fonts
+    BASE_PATH + 'styles.css',
 ];
 
 self.addEventListener('install', function(event) {
@@ -43,18 +48,20 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    fetch(event.request).catch(function() {
-      return caches.match(event.request).then(function(response) {
-        if (response) {
-          return response;
-        } else if (event.request.headers.get('accept').includes('text/html')) {
-          return caches.match('first.html');
-        }
-      });
-    })
-  );
-});
+  var requestURL = new URL(event.request.url);
+  // Handle requests for index.html
+  if (requestURL.pathname === BASE_PATH + 'first.html') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match('first.html').then(function(cachedResponse) {
+          var fetchPromise = fetch('first.html').then(function(networkResponse) {
+            cache.put('first.html', networkResponse.clone());
+            return networkResponse;
+          });
+          return cachedResponse || fetchPromise;
+        });
+      })
+    );
 
 self.addEventListener('activate', function(event) {
   event.waitUntil(
