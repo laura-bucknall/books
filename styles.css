@@ -35,7 +35,7 @@ header p{
 .map-background{
     background: rgba(0, 0, 0, 0.73);
 	margin: 0 auto;
-    height:770px;
+    height:805px;
 }
 .box-section{
 	padding: 30px 30px;
@@ -163,9 +163,14 @@ h4{
 }
     header img{
         right: 0;
-    }
+}
     .line{
         width: 115%;
+}
+    #place-section{
+        margin-top: 275px;
+}
+
 }
 @media (max-width: 670px) and (orientation: landscape) {
     .books{
@@ -191,6 +196,9 @@ h4{
 	}
     #place-section{
         margin-top: 275px;
+    }
+    #map-background{
+        height:770px;
     }
 }
 
