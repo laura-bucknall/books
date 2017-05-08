@@ -111,6 +111,21 @@ header img{
     margin-left: 280px;
     width: 45px;
 }
+h4{
+    font-weight:100;
+}
+.line{
+    border: 1px solid #fff;
+    width: 610px;
+}
+#place-section{
+    position: absolute;
+    margin-top: 345px;
+    padding: 37px;
+    color: #fff;
+    font-family: sans-serif;
+    width: 80%;
+}
 
 #map-container.offline-map {
   -webkit-background-size: cover;
