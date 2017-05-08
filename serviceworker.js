@@ -1,20 +1,19 @@
 var BASE_PATH = '/books/';
 var CACHE_NAME = 'gih-cache-v1';
 var TEMP_IMAGE_CACHE_NAME = 'temp-cache-v1';
-var newsAPIJSON = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=577a4a09fd2a424eadf445c39bdab3c2";
 
 var CACHED_URLS = [
     // Our HTML
     BASE_PATH + 'first.html',
     
     // Images for favicons
-    BASE_PATH + 'appimages/android-icon-36x36.png',
-    BASE_PATH + 'appimages/android-icon-48x48.png',
-    BASE_PATH + 'appimages/android-icon-72x72.png',
-    BASE_PATH + 'appimages/android-icon-96x96.png',
-    BASE_PATH + 'appimages/android-icon-144x144.png',
-    BASE_PATH + 'appimages/android-icon-192x192.png',
-    BASE_PATH + 'appimages/favicon-32x32.png',
+    BASE_PATH + 'images/android-icon-36x36.png',
+    BASE_PATH + 'images/android-icon-48x48.png',
+    BASE_PATH + 'images/android-icon-72x72.png',
+    BASE_PATH + 'images/android-icon-96x96.png',
+    BASE_PATH + 'images/android-icon-144x144.png',
+    BASE_PATH + 'images/android-icon-192x192.png',
+    BASE_PATH + 'images/favicon-32x32.png',
 
     //Images for page
     BASE_PATH + 'images/book1.jpg',
@@ -27,7 +26,9 @@ var CACHED_URLS = [
     BASE_PATH + 'images/book8.jpg',
     BASE_PATH + 'images/book9.jpg',
     BASE_PATH + 'images/book10.jpg',
-    BASE_PATH + 'images/panel.jpg',
+    BASE_PATH + 'images/bookshelf.jpg',
+    BASE_PATH + 'images/bookshelf-m.jpg',
+    BASE_PATH + 'images/bookshelf-t.jpg',
     BASE_PATH + 'images/ms-icon-310x310.png',
     // JavaScript
     BASE_PATH + 'offline-map.js',
@@ -37,7 +38,6 @@ var CACHED_URLS = [
   // CSS and fonts
     BASE_PATH + 'styles.css',
     BASE_PATH + 'scripts.js',
-    BASE_PATH + 'events.json',
     BASE_PATH + 'book-1.html',
     BASE_PATH + 'book-2.html',
     BASE_PATH + 'book-3.html',
@@ -47,8 +47,7 @@ var CACHED_URLS = [
     BASE_PATH + 'book-7.html',
     BASE_PATH + 'book-8.html',
     BASE_PATH + 'book-9.html',
-    BASE_PATH + 'book-10.html',
-    BASE_PATH + 'appimages/news-default.jpg'
+    BASE_PATH + 'book-10.html'
 
 
 ];
