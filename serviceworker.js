@@ -1,5 +1,5 @@
 var BASE_PATH = '/books/';
-var CACHE_NAME = 'gih-cache-v5';
+var CACHE_NAME = 'gih-cache-v1';
 var TEMP_IMAGE_CACHE_NAME = 'temp-cache-v1';
 
 var CACHED_URLS = [
@@ -31,15 +31,30 @@ var CACHED_URLS = [
     BASE_PATH + 'images/bookshelf-t.jpg',
     BASE_PATH + 'images/ms-icon-310x310.png',
     // JavaScript
+    BASE_PATH + 'offline-map.js',
     BASE_PATH + 'material.js',
     // Manifest
     BASE_PATH + 'manifest.json',
   // CSS and fonts
     BASE_PATH + 'styles.css',
+    BASE_PATH + 'scripts.js',
+    BASE_PATH + 'book-1.html',
+    BASE_PATH + 'book-2.html',
+    BASE_PATH + 'book-3.html',
+    BASE_PATH + 'book-4.html',
+    BASE_PATH + 'book-5.html',
+    BASE_PATH + 'book-6.html',
+    BASE_PATH + 'book-7.html',
+    BASE_PATH + 'book-8.html',
+    BASE_PATH + 'book-9.html',
+    BASE_PATH + 'book-10.html'
+
+
 ];
 
+
 self.addEventListener('install', function(event) {
-  // Cache everything in CACHED_URLS. Installation will fail if something fails to cache
+  // Cache everything in CACHED_URLS. Installation fails if anything fails to cache
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll(CACHED_URLS);
@@ -62,6 +77,7 @@ self.addEventListener('fetch', function(event) {
         });
       })
     );
+  };
 
 self.addEventListener('activate', function(event) {
   event.waitUntil(
@@ -75,4 +91,4 @@ self.addEventListener('activate', function(event) {
       );
     })
   );
-})
+});
