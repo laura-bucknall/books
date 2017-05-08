@@ -89,12 +89,13 @@ h2{
 }
 
 .like-button p, .nearby-button p{
-	border: 1px solid blue;
+	border: 1px solid #fff;
 	width: 140px;
 	border-radius: 5px;
 	font-size: 24px;
 	text-align: center;
 	padding: 10px;
+    text-decoration: none;
 }
 #map-container{
     height: 300px;
@@ -103,6 +104,11 @@ h2{
     width: 635px;
     margin: 75px 30px;
     position: absolute;
+}
+header img{
+    position: absolute;
+    margin-top: -42px;
+    margin-left: 295px;
 }
 
 #map-container.offline-map {
