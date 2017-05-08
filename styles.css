@@ -91,6 +91,13 @@ h2{
 	text-align: center;
 	padding: 10px;
 }
+#map-container{
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    width: 699px;
+    margin: 0 auto;
+}
 
 @media (min-width: 840px){
 	.box, .background{
@@ -113,6 +120,8 @@ h2{
 	.box{
 	background-image: url(images/bookshelf-t.jpg);
 }
+    #map-container{
+        width: 100%;
 }
 @media (max-width: 670px) and (orientation: landscape) {
     .books{
