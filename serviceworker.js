@@ -91,3 +91,5 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
+
+globSync(publicAssetPathGlob, { nodir: true })
