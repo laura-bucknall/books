@@ -18,7 +18,7 @@ var CACHED_URLS = [
     BASE_PATH + 'images/book2.jpg',
     BASE_PATH + 'images/book3.jpg',
     BASE_PATH + 'images/book4.jpg',
-    BASE_PATH + 'images/book5.ico',
+    BASE_PATH + 'images/book5.jpg',
     BASE_PATH + 'images/book6.jpg',
     BASE_PATH + 'images/book7.jpg',
     BASE_PATH + 'images/book8.jpg',
@@ -29,7 +29,6 @@ var CACHED_URLS = [
     BASE_PATH + 'images/bookshelf-t.jpg',
     BASE_PATH + 'images/ms-icon-310x310.png',
     // JavaScript
-    BASE_PATH + 'offline-map.js',
     BASE_PATH + 'material.js',
     // Manifest
     BASE_PATH + 'manifest.json',
