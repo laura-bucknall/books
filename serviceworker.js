@@ -3,34 +3,34 @@ var CACHED_URLS = [
   // Our HTML
   'first.html',
   // Stylesheets and fonts
-    BASE_PATH + 'styles.css',
+    'styles.css',
   // JavaScript
-    BASE_PATH + 'material.js',
+    'material.js',
     
   // Favicon images
-    BASE_PATH + 'images/android-icon-36x36.png',
-    BASE_PATH + 'images/android-icon-48x48.png',
-    BASE_PATH + 'images/android-icon-72x72.png',
-    BASE_PATH + 'images/android-icon-96x96.png',
-    BASE_PATH + 'images/android-icon-144x144.png',
-    BASE_PATH + 'images/android-icon-192x192.png',
-    BASE_PATH + 'images/favicon-32x32.png',
+    'images/android-icon-36x36.png',
+    'images/android-icon-48x48.png',
+    'images/android-icon-72x72.png',
+    'images/android-icon-96x96.png',
+    'images/android-icon-144x144.png',
+    'images/android-icon-192x192.png',
+    'images/favicon-32x32.png',
 
     //Images for page
-    BASE_PATH + 'images/book1.jpg',
-    BASE_PATH + 'images/book2.jpg',
-    BASE_PATH + 'images/book3.jpg',
-    BASE_PATH + 'images/book4.jpg',
-    BASE_PATH + 'images/book5.ico',
-    BASE_PATH + 'images/book6.jpg',
-    BASE_PATH + 'images/book7.jpg',
-    BASE_PATH + 'images/book8.jpg',
-    BASE_PATH + 'images/book9.jpg',
-    BASE_PATH + 'images/book10.jpg',
-    BASE_PATH + 'images/bookshelf.jpg',
-    BASE_PATH + 'images/bookshelf-m.jpg',
-    BASE_PATH + 'images/bookshelf-t.jpg',
-    BASE_PATH + 'images/ms-icon-310x310.png'
+    'images/book1.jpg',
+    'images/book2.jpg',
+    'images/book3.jpg',
+    'images/book4.jpg',
+    'images/book5.ico',
+    'images/book6.jpg',
+    'images/book7.jpg',
+    'images/book8.jpg',
+    'images/book9.jpg',
+    'images/book10.jpg',
+    'images/bookshelf.jpg',
+    'images/bookshelf-m.jpg',
+    'images/bookshelf-t.jpg',
+    'images/ms-icon-310x310.png'
 ];
 
 self.addEventListener('install', function(event) {
